@@ -462,7 +462,7 @@
                               let fuse;
                               async function getProduct() {
                                 const res = await axios({
-                                  url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
+                                  url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /list-product",
                                   method: "get",
                                 });
                                 const result = await res.data;
@@ -1170,7 +1170,7 @@
   <script>
     async function getDetailProduct() {
       const res = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/detail",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /product/detail",
         method: "get",
         params: {
           id_product: new URLSearchParams(window.location.search).get(
@@ -1212,7 +1212,7 @@
   <script>
     async function relateProduct() {
       const res = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/relate_product",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /relate_product",
         method: "get",
       });
       const result = await res.data;
@@ -1317,7 +1317,7 @@
           );
         } else {
           const res = await axios({
-            url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add_to_cart",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /add_to_cart",
             method: "post",
             data: {
               id_product: new URLSearchParams(window.location.search).get(
@@ -1347,7 +1347,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1439,7 +1439,7 @@
     async function checkLogin() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),

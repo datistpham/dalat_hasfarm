@@ -402,7 +402,7 @@
     };
     async function getProduct() {
       const res = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /list-product",
         method: "get",
       });
       const result = await res.data;
@@ -520,7 +520,7 @@
       getCategory();
       document.getElementById("popup-edit").style.display = "flex";
       const res = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get/detail-product",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get/detail-product",
         method: "get",
         params: {
           id_product: id,
@@ -547,13 +547,13 @@
         formData.append("image1", $("#inp-product-image-1")[0].files[0]);
         formData.append("image2", $("#inp-product-image-1")[0].files[0]);
         const res1 = await axios({
-          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/image/upload",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /image/upload",
           method: "post",
           data: formData,
         });
         const result1 = await res1.data;
         const res = await axios({
-          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/update",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /product/update",
           method: "patch",
           data: {
             id: $("#id-product").val(),
@@ -575,7 +575,7 @@
         }, 1500);
       } else {
         const res = await axios({
-          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/update",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /product/update",
           method: "patch",
           data: {
             id: $("#id-product").val(),
@@ -611,13 +611,13 @@
       formData.append("image1", $("#inp-add-product-image-1")[0].files[0]);
       formData.append("image2", $("#inp-add-product-image-2")[0].files[0]);
       const res1 = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/image/upload",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /image/upload",
         method: "post",
         data: formData,
       });
       const result1 = await res1.data;
       const res = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add/product",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /add/product",
         method: "post",
         data: {
           product_name: $("#inp-add-product-name").val(),
@@ -650,7 +650,7 @@
             break;
           case "ok":
             const res = await axios({
-              url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/delete",
+              url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /product/delete",
               method: "delete",
               data: {
                 id_product: id,
@@ -667,7 +667,7 @@
         }
       });
       // const res= await axios({
-      //     url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/delete",
+      //     url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /product/delete",
       //     method: "delete",
       //     data: {
       //         id_product: id
@@ -686,7 +686,7 @@
     async function checkInfo() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/employee",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /employee",
           method: "get",
           params: {
             id: Cookies.get("uid"),
@@ -731,7 +731,7 @@
   <script>
     async function getCategory() {
       const res = await axios({
-        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/category",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /category",
         method: "get",
       });
       const result = await res.data;
