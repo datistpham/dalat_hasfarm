@@ -851,7 +851,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get_cart",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1116,7 +1116,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get_cart",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1205,7 +1205,7 @@
     async function checkLogin() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1241,7 +1241,7 @@
             break;
           case "ok":
             const res = await axios({
-              url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /delete_cart/item",
+              url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/delete_cart/item",
               method: "post",
               data: {
                 id_product: id,
@@ -1261,7 +1261,7 @@
         }
       });
       // const res= await axios({
-      //   url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /delete_cart/item",
+      //   url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/delete_cart/item",
       //   method: "post",
       //   data: {
       //     id_product: id,
@@ -1299,7 +1299,7 @@
         } else {
           a = parseInt(a) + parseInt(amount);
           const res = await axios({
-            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /add_to_cart",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add_to_cart",
             method: "post",
             data: {
               id_product: id,

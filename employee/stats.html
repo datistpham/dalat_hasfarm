@@ -234,7 +234,7 @@
     async function checkInfo() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /employee",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/employee",
           method: "get",
           params: {
             id: Cookies.get("uid"),
@@ -274,7 +274,7 @@
     let arr_stats = [];
     async function statsSpecific() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /employee/stats",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/employee/stats",
         method: "get",
       });
       const result = await res.data;

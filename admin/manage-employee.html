@@ -445,7 +445,7 @@
 
         if(Cookies.get("uid")) {
             const res= await axios({
-                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /admin",
+                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/admin",
                 method: "get",
                 params: {
                     id: Cookies.get("uid")
@@ -475,7 +475,7 @@
 <script>
     async function getEmployee() {
         const res= await axios({
-            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /admin/get/employee",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/admin/get/employee",
             method: "get"
         })
         const result= await res.data
@@ -524,7 +524,7 @@
     async function detailEmployee(id) {
         document.getElementById("popup-detail").style.display= "flex"     
         const res= await axios({
-            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /admin/detail-employee",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/admin/detail-employee",
             method: "get",
             params: {
                 id: id
@@ -576,7 +576,7 @@
 <script>
     async function updateEmployee() {
         const res= await axios({
-            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /admin/update/employee",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/admin/update/employee",
             method: "put",
             data: {
                 employeeName: $("#inp-employee-name").val(),
@@ -610,7 +610,7 @@
             break
           case "ok":
             const res= await axios({
-                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /admin/delete/employee",
+                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/admin/delete/employee",
                 method: "delete",
                 data: {
                     id: id
@@ -641,7 +641,7 @@
         else {
 
             const res= await axios({
-                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /add/employee",
+                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add/employee",
                 method: "post",
                 data: {
                     employeeName: $("#inp-add-employee-name").val(),

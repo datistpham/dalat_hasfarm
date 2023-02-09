@@ -295,7 +295,7 @@
           if(Cookies.get("uid")) {
           try {
               const res= await axios({
-                  url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /employee",
+                  url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/employee",
                   method: "get",
                   params: {
                       id: Cookies.get("uid")
@@ -326,7 +326,7 @@
       async function login() {
         try {
           const res = await axios({
-            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /employee/login",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/employee/login",
             method: "post",
             data: {
               account: $("#account").val(),

@@ -195,7 +195,7 @@
   <script>
     async function getDashboard() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /employee/dashboard",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/employee/dashboard",
         method: "get",
       });
       const result = await res.data;
@@ -227,7 +227,7 @@
       if (Cookies.get("uid")) {
         try {
           const res = await axios({
-            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /admin",
+            url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/admin",
             method: "get",
             params: {
               id: Cookies.get("uid"),
@@ -259,7 +259,7 @@
     let oldBudget = 0;
     async function getBudget() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get/budget",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get/budget",
         method: "get",
       });
       const result = await res.data;
@@ -285,7 +285,7 @@
           if (!name) throw null;
           if (name.length <= 0) throw null;
           return axios.post(
-            "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /add/budget",
+            "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add/budget",
             { budget: parseInt(name) + parseInt(oldBudget) }
           );
         })

@@ -965,7 +965,7 @@
     });
     async function login() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /login",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/login",
         method: "post",
         data: {
           email: $("#input-email").val(),
@@ -987,7 +987,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get_cart",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1066,7 +1066,7 @@
     $("#submit-form-forgotten").on("click", async function () {
       $(this).html("Chúng tôi đã gửi mật khẩu về email của bạn");
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /forgot-password",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/forgot-password",
         method: "post",
         data: {
           email: $("#input-email-forgotten").val(),

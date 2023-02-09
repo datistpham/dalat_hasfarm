@@ -794,7 +794,7 @@
     async function checkLogin() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /",
+          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -825,7 +825,7 @@
   <script>
     async function getBank() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /user/bank",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/user/bank",
         method: "get",
         params: {
           id_user: Cookies.get("uid"),
@@ -849,7 +849,7 @@
   <script>
     async function getMomo() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /get/momo",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get/momo",
         method: "get",
         params: {
           id_user: Cookies.get("uid"),
@@ -866,7 +866,7 @@
   <script>
     async function updateMomo() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /update/momo",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/update/momo",
         method: "patch",
         data: {
           momo_account: $("#inp-account-number-mm").val(),
@@ -885,7 +885,7 @@
   <script>
     async function updateUser() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /user/update",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/user/update",
         method: "patch",
         data: {
           full_name: $("#inp-fullname").val(),
@@ -906,7 +906,7 @@
   <script>
     async function updateBank() {
       const res = await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io /user/bank/update",
+        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/user/bank/update",
         method: "patch",
         data: {
           account_number: $("#inp-account-number").val(),
