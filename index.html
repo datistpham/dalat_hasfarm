@@ -511,7 +511,7 @@
                       let fuse;
                       async function getProduct() {
                         const res= await axios({
-                          url: "http://localhost:8000/list-product",
+                          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
                           method: "get",
                         })
                         const result= await res.data
@@ -1123,7 +1123,7 @@
            <script>
             async function getHightLightProduct() {
               const res= await axios({
-                url: "http://localhost:8000/get_hight_light_product",
+                url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_hight_light_product",
                 method: "get",
           
               })
@@ -2344,7 +2344,7 @@
     async function get_cart() {
         if(Cookies.get("uid")) {
             const res= await axios({
-                url: "http://localhost:8000/get_cart",
+                url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
                 method: "post",
                 data: {
                     id_user: Cookies.get("uid")
@@ -2415,7 +2415,7 @@
     async function checkLogin() {
       if(Cookies.get("uid")) {
         const res= await axios({
-          url: "http://localhost:8000/",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
           method: "post",
           data: {
             id_user: Cookies.get("uid")
@@ -2446,7 +2446,7 @@
   <script>
     async function getCategory(id) {
       const res= await axios({
-        url: "http://localhost:8000/category/product",
+        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/category/product",
         method: "get",
         params: {
           category_id: id

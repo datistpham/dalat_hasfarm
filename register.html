@@ -86,7 +86,7 @@
       type="text/css"
       href="catalog/view/theme/vision/stylesheet/stylesheet.css?v=1571113588"
     />
-    
+
     <script
       type="text/javascript"
       src="catalog/view/theme/vision/javascript/jquery.gmap.min.js?v=1571113588"
@@ -198,7 +198,6 @@
             <li class="level0 level-top parent level_ico">
               <a href="http://127.0.0.1:5500/san-pham.html">Sản phẩm</a>
               <i class="ti-plus hide_close"></i>
-          
             </li>
             <li class="level0 level-top parent level_ico">
               <a href="http://127.0.0.1:5500/chuyen-cua-la.html">Nghe Hoa Kể</a>
@@ -549,7 +548,6 @@
                             >
                               <span>Sản phẩm</span>
                             </a>
-                     
                           </li>
                           <li class="nav-item pt_menu">
                             <a
@@ -644,9 +642,7 @@
               <div id="login" class="row justify-content-md-center">
                 <div class="col-lg-6 col-md-6 evo-account-content">
                   <div id="evo-login">
-                    <form
-                      id="customer_register"
-                    >
+                    <form id="customer_register">
                       <h1 class="customer_login__title">Đăng ký</h1>
                       <input
                         type="hidden"
@@ -816,7 +812,6 @@
                                 : (e ? "?" : "") + n.join("&");
                             }
                           </script>
-                          
                         </div>
                       </div>
                     </form>
@@ -951,19 +946,13 @@
                   <h4>Chính sách</h4>
                   <ul class="links">
                     <li>
-                      <a href="javascript:;"
-                        >Chính sách vận chuyển</a
-                      >
+                      <a href="javascript:;">Chính sách vận chuyển</a>
                     </li>
                     <li>
-                      <a href="javascript:;"
-                        >Chính sách bảo mật</a
-                      >
+                      <a href="javascript:;">Chính sách bảo mật</a>
                     </li>
                     <li>
-                      <a href="javascript:;"
-                        >Quy định &amp; Chính sách</a
-                      >
+                      <a href="javascript:;">Quy định &amp; Chính sách</a>
                     </li>
                   </ul>
                 </div>
@@ -974,9 +963,13 @@
                 <div class="footer-column pull-left">
                   <h4>Hỗ trợ</h4>
                   <ul class="links">
-                    <li><a href="http://127.0.0.1:5500/lien-he.html">Liên hệ</a></li>
                     <li>
-                      <a href="http://127.0.0.1:5500/gioi-thieu.html">Giới thiệu</a>
+                      <a href="http://127.0.0.1:5500/lien-he.html">Liên hệ</a>
+                    </li>
+                    <li>
+                      <a href="http://127.0.0.1:5500/gioi-thieu.html"
+                        >Giới thiệu</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -1079,28 +1072,27 @@
 </html>
 <script src="/catalog/view/theme/default/javascript/library/jquery.validate.min.js"></script>
 <script>
-  $("#submit-form-register").on("click", function() {
-    signup()
-  })
+  $("#submit-form-register").on("click", function () {
+    signup();
+  });
   async function signup() {
-    const res= await axios({
-      url: "http://localhost:8000/signup",
+    const res = await axios({
+      url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/signup",
       method: "post",
       data: {
         email: $("#input-email").val(),
         password: $("#input-password").val(),
         full_name: $("#input-fullname").val(),
         username: $("#input-username").val(),
-        phone_number: $("#input-phonenumber").val()
-      }
-    })
-    const result= await res.data
-    if(result.signup=== true) {
-      $("#msg").html("Đăng ký thành công")
-      window.location.href= window.location.origin+ "/login.html"
-    }
-    else {
-      $("#msg").html(result.msg)
+        phone_number: $("#input-phonenumber").val(),
+      },
+    });
+    const result = await res.data;
+    if (result.signup === true) {
+      $("#msg").html("Đăng ký thành công");
+      window.location.href = window.location.origin + "/login.html";
+    } else {
+      $("#msg").html(result.msg);
     }
   }
 </script>

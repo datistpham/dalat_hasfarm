@@ -278,7 +278,7 @@
 <script>
     async function getListOrderApprove() {
         const res= await axios({
-            url: "http://localhost:8000/product/order/approve",
+            url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/order/approve",
             method: "get",
             data: {
                 state_order: 0
@@ -307,7 +307,7 @@
     async function getDetailOrder(id) {
         document.getElementById("popup-detail").style.display= "flex"
         const res= await axios({
-            url: "http://localhost:8000/get_payment",
+            url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_payment",
             method: "get",
             params: {
                 id_payment: id
@@ -350,7 +350,7 @@
 <script>
     async function deleteOrder(id) {
         const res= await axios({
-            url: "http://localhost:8000/order/delete",
+            url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/order/delete",
             method: "delete",
             data: {
                 id_payment: id

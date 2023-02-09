@@ -853,7 +853,7 @@
       document.title= "Tìm kiếm - "+ new URLSearchParams(window.location.search).get("query_search")
       async function getProduct() {
         const res= await axios({
-          url: "http://localhost:8000/list-product",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
           method: "get",
         })
         const result= await res.data

@@ -13,7 +13,12 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"
+      integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
@@ -273,31 +278,34 @@
         </label>
         <div id="msg"></div>
 
-        <button onclick="login()" type="button" class="btn-sign-in">Đăng nhập</button>
+        <button onclick="login()" type="button" class="btn-sign-in">
+          Đăng nhập
+        </button>
       </form>
 
       <footer class="footer"></footer>
 
       <div id="container-6f994c72f6caa154b79fc6f66f252146"></div>
     </div>
-    
+
     <script>
       async function login() {
         const res = await axios({
-          url: "http://localhost:8000/warehouse/auth",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/warehouse/auth",
           method: "post",
           data: {
             account: $("#account").val(),
-            password: $("#password").val()
+            password: $("#password").val(),
           },
         });
-        const result= await res.data
-        $("#msg").html(result.msg)
-        if(result.login === true) {
-            Cookies.set("uid", result.id[0].id_user)
-            return window.location.href= window.location.origin+ "/warehouse/index.html"
+        const result = await res.data;
+        $("#msg").html(result.msg);
+        if (result.login === true) {
+          Cookies.set("uid", result.id[0].id_user);
+          return (window.location.href =
+            window.location.origin + "/warehouse/index.html");
         }
-        return console.log(result)
+        return console.log(result);
       }
     </script>
   </body>

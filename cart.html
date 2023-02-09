@@ -163,8 +163,18 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"
+      integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
 
   <body class="checkout-cart">
@@ -191,7 +201,6 @@
             <li class="level0 level-top parent level_ico">
               <a href="http://127.0.0.1:5500/san-pham.html">Sản phẩm</a>
               <i class="ti-plus hide_close"></i>
-              
             </li>
             <li class="level0 level-top parent level_ico">
               <a href="http://127.0.0.1:5500/chuyen-cua-la.html">Nghe Hoa Kể</a>
@@ -271,7 +280,6 @@
                           enctype="multipart/form-data"
                         >
                           <input type="hidden" name="code" value="" />
-                         
                         </form>
                       </div>
                     </span>
@@ -418,8 +426,7 @@
                             </div>
                             <div
                               class="dfhdhjsdhjkdass top-cart-contain f-right hidden-lg hidden-md visible-xs visible-sm"
-                            > 
-                              
+                            >
                               <div class="mini-cart text-xs-center">
                                 <div class="heading-cart-mobi">
                                   <a
@@ -449,12 +456,18 @@
                       <nav class="header-nav hidden-sm hidden-xs">
                         <ul class="item_big pt_custommenu" id="pt_custommenu">
                           <li id="name-user-x" class="nav-item pt_menu">
-                            <a class="a-img" href="http://127.0.0.1:5500/login.html">
+                            <a
+                              class="a-img"
+                              href="http://127.0.0.1:5500/login.html"
+                            >
                               <span>Đăng nhập</span>
                             </a>
                           </li>
                           <li id="logout-user-x" class="nav-item pt_menu">
-                            <a class="a-img" href="http://127.0.0.1:5500/register.html">
+                            <a
+                              class="a-img"
+                              href="http://127.0.0.1:5500/register.html"
+                            >
                               <span>Đăng ký</span>
                             </a>
                           </li>
@@ -478,7 +491,6 @@
                             >
                               <span>Sản phẩm</span>
                             </a>
-                           
                           </li>
                           <li class="nav-item pt_menu">
                             <a
@@ -577,8 +589,7 @@
                         <th class="remove">&nbsp;</th>
                       </tr>
                     </thead>
-                    <tbody id="list-cart">
-                    </tbody>
+                    <tbody id="list-cart"></tbody>
                   </table>
                 </form>
               </div>
@@ -725,19 +736,13 @@
                   <h4>Chính sách</h4>
                   <ul class="links">
                     <li>
-                      <a href="javascript:;"
-                        >Chính sách vận chuyển</a
-                      >
+                      <a href="javascript:;">Chính sách vận chuyển</a>
                     </li>
                     <li>
-                      <a href="javascript:;"
-                        >Chính sách bảo mật</a
-                      >
+                      <a href="javascript:;">Chính sách bảo mật</a>
                     </li>
                     <li>
-                      <a href="javascript:;"
-                        >Quy định &amp; Chính sách</a
-                      >
+                      <a href="javascript:;">Quy định &amp; Chính sách</a>
                     </li>
                   </ul>
                 </div>
@@ -748,9 +753,13 @@
                 <div class="footer-column pull-left">
                   <h4>Hỗ trợ</h4>
                   <ul class="links">
-                    <li><a href="http://127.0.0.1:5500/lien-he.html">Liên hệ</a></li>
                     <li>
-                      <a href="http://127.0.0.1:5500/gioi-thieu.html">Giới thiệu</a>
+                      <a href="http://127.0.0.1:5500/lien-he.html">Liên hệ</a>
+                    </li>
+                    <li>
+                      <a href="http://127.0.0.1:5500/gioi-thieu.html"
+                        >Giới thiệu</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -842,28 +851,33 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/get_cart",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
           },
         });
         const result = await res.data;
-        if(result?.length <= 0 ) {
-            document.getElementById("list-cart").innerHTML= `<div class="no-item">
+        if (result?.length <= 0) {
+          document.getElementById(
+            "list-cart"
+          ).innerHTML = `<div class="no-item">
             <p>Giỏ hàng của bạn trống</p>
-        </div>`
-        }
-        else {
-
-            document.getElementById("list-cart").innerHTML= "<ul class='list-item-cart'>" + result?.map?.(item=> {
-              if(parseInt(item.discount) > 0) {
-                return `
+        </div>`;
+        } else {
+          document.getElementById("list-cart").innerHTML =
+            "<ul class='list-item-cart'>" +
+            result
+              ?.map?.((item) => {
+                if (parseInt(item.discount) > 0) {
+                  return `
                 <tr class="line-item-container" data-variant-id="10625">
                   <td class="image">
                     <div class="product_image">
                       <a
-                        href="http://127.0.0.1:5500/product.html?productId=${item.id_product}"
+                        href="http://127.0.0.1:5500/product.html?productId=${
+                          item.id_product
+                        }"
                         title="${item.product_name}"
                       >
                         <img
@@ -876,7 +890,9 @@
                   <td class="item">
                     <h3>
                       <a
-                        href="http://127.0.0.1:5500/product.html?productId=${item.id_product}"
+                        href="http://127.0.0.1:5500/product.html?productId=${
+                          item.id_product
+                        }"
                         title="${item.product_name}"
                         class="text-danger"
                       >
@@ -885,11 +901,18 @@
                     </h3>
                     <p class="variant"></p>
                     <p>
-                      <span class="pri line-item-price">${numberWithCommas(parseInt(item.price) * (1 - parseInt(item.discount) / 100))}đ</span>
+                      <span class="pri line-item-price">${numberWithCommas(
+                        parseInt(item.price) *
+                          (1 - parseInt(item.discount) / 100)
+                      )}đ</span>
                     </p>
   
                     <div class="qty quantity-partent qty-click clearfix">
-                      <button onclick="updateAmount(${item.id_product}, ${parseInt(item.price) * (1 - parseInt(item.discount) / 100)}, ${parseInt(-1)}, ${parseInt(item.amount)}, ${parseInt(item.amount_product)})" type="button" class="qtyminus qty-btn">
+                      <button onclick="updateAmount(${item.id_product}, ${
+                    parseInt(item.price) * (1 - parseInt(item.discount) / 100)
+                  }, ${parseInt(-1)}, ${parseInt(item.amount)}, ${parseInt(
+                    item.amount_product
+                  )})" type="button" class="qtyminus qty-btn">
                         -
                       </button>
                       <input
@@ -900,13 +923,23 @@
                         size="1"
                         class="tc line-item-qty item-quantity"
                       />
-                      <button onclick="updateAmount(${item.id_product}, ${parseInt(item.price) * (1 - parseInt(item.discount) / 100)}, ${parseInt(1)}, ${parseInt(item.amount)}, ${parseInt(item.amount_product)})" type="button" class="qtyplus qty-btn">
+                      <button onclick="updateAmount(${item.id_product}, ${
+                    parseInt(item.price) * (1 - parseInt(item.discount) / 100)
+                  }, ${parseInt(1)}, ${parseInt(item.amount)}, ${parseInt(
+                    item.amount_product
+                  )})" type="button" class="qtyplus qty-btn">
                         +
                       </button>
                     </div>
                     <p class="price">
                       <span class="text">Thành tiền:</span>
-                      <span id="sum-p-${item.id_product}" class="line-item-total">${numberWithCommas(parseInt(item.amount) * parseInt(item.price) * (1 - parseInt(item.discount) / 100))}đ</span>
+                      <span id="sum-p-${
+                        item.id_product
+                      }" class="line-item-total">${numberWithCommas(
+                    parseInt(item.amount) *
+                      parseInt(item.price) *
+                      (1 - parseInt(item.discount) / 100)
+                  )}đ</span>
                     </p>
                   </td>
                   <td title="Xóa" class="remove">
@@ -942,16 +975,16 @@
                   </td>
               </tr>
   
-              `
-              }
-              else {
-
-                return `
+              `;
+                } else {
+                  return `
                 <tr class="line-item-container" data-variant-id="10625">
                   <td class="image">
                     <div class="product_image">
                       <a
-                        href="http://127.0.0.1:5500/product.html?productId=${item.id_product}"
+                        href="http://127.0.0.1:5500/product.html?productId=${
+                          item.id_product
+                        }"
                         title="${item.product_name}"
                       >
                         <img
@@ -964,7 +997,9 @@
                   <td class="item">
                     <h3>
                       <a
-                        href="http://127.0.0.1:5500/product.html?productId=${item.id_product}"
+                        href="http://127.0.0.1:5500/product.html?productId=${
+                          item.id_product
+                        }"
                         title="${item.product_name}"
                         class="text-danger"
                       >
@@ -973,11 +1008,19 @@
                     </h3>
                     <p class="variant"></p>
                     <p>
-                      <span class="pri line-item-price">${numberWithCommas(parseInt(item.price))}đ</span>
+                      <span class="pri line-item-price">${numberWithCommas(
+                        parseInt(item.price)
+                      )}đ</span>
                     </p>
   
                     <div class="qty quantity-partent qty-click clearfix">
-                      <button onclick="updateAmount(${item.id_product}, ${parseInt(item.price)}, ${parseInt(-1)}, ${parseInt(item.amount)}, ${parseInt(item.amount_product)})" type="button" class="qtyminus qty-btn">
+                      <button onclick="updateAmount(${
+                        item.id_product
+                      }, ${parseInt(item.price)}, ${parseInt(-1)}, ${parseInt(
+                    item.amount
+                  )}, ${parseInt(
+                    item.amount_product
+                  )})" type="button" class="qtyminus qty-btn">
                         -
                       </button>
                       <input
@@ -988,13 +1031,23 @@
                         size="1"
                         class="tc line-item-qty item-quantity"
                       />
-                      <button onclick="updateAmount(${item.id_product}, ${parseInt(item.price)}, ${parseInt(1)}, ${parseInt(item.amount)}, ${parseInt(item.amount_product)}, ${parseInt(item.amount_product)})" type="button" class="qtyplus qty-btn">
+                      <button onclick="updateAmount(${
+                        item.id_product
+                      }, ${parseInt(item.price)}, ${parseInt(1)}, ${parseInt(
+                    item.amount
+                  )}, ${parseInt(item.amount_product)}, ${parseInt(
+                    item.amount_product
+                  )})" type="button" class="qtyplus qty-btn">
                         +
                       </button>
                     </div>
                     <p class="price">
                       <span class="text">Thành tiền:</span>
-                      <span id="sum-p-${item.id_product}" class="line-item-total">${numberWithCommas(parseInt(item.amount) * parseInt(item.price))}đ</span>
+                      <span id="sum-p-${
+                        item.id_product
+                      }" class="line-item-total">${numberWithCommas(
+                    parseInt(item.amount) * parseInt(item.price)
+                  )}đ</span>
                     </p>
                   </td>
                   <td title="Xóa" class="remove">
@@ -1030,26 +1083,29 @@
                   </td>
               </tr>
   
-              `
-              
-              }
-              
-            }
-            ).join("") + "</ul>"
+              `;
+                }
+              })
+              .join("") +
+            "</ul>";
         }
-        document.getElementById("count-cart").innerHTML= result.length
-        document.getElementById("total-price").innerHTML= numberWithCommas(_.sumBy(result, function(e) {
-          if(parseInt(e.discount) > 0) {
-            return parseInt(e.amount) * parseInt(e.price) * (1 - parseInt(e.discount) / 100)
-          }
-          else {
-            return parseInt(e.amount) * parseInt(e.price)
-          }
-        }))+ "đ"
+        document.getElementById("count-cart").innerHTML = result.length;
+        document.getElementById("total-price").innerHTML =
+          numberWithCommas(
+            _.sumBy(result, function (e) {
+              if (parseInt(e.discount) > 0) {
+                return (
+                  parseInt(e.amount) *
+                  parseInt(e.price) *
+                  (1 - parseInt(e.discount) / 100)
+                );
+              } else {
+                return parseInt(e.amount) * parseInt(e.price);
+              }
+            })
+          ) + "đ";
       } else {
-        document.getElementById(
-          "list-cart"
-        ).innerHTML = `<div class="no-item">
+        document.getElementById("list-cart").innerHTML = `<div class="no-item">
                 <p>Đăng nhập để tiếp tục</p>
             </div>`;
       }
@@ -1058,22 +1114,27 @@
   </script>
   <script>
     async function get_cart() {
-        if(Cookies.get("uid")) {
-            const res= await axios({
-                url: "http://localhost:8000/get_cart",
-                method: "post",
-                data: {
-                    id_user: Cookies.get("uid")
-                }
-            })
-            const result= await res.data
-            if(result?.length <= 0 ) {
-                document.getElementById("cart-sidebar").innerHTML= `<div class="no-item">
+      if (Cookies.get("uid")) {
+        const res = await axios({
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
+          method: "post",
+          data: {
+            id_user: Cookies.get("uid"),
+          },
+        });
+        const result = await res.data;
+        if (result?.length <= 0) {
+          document.getElementById(
+            "cart-sidebar"
+          ).innerHTML = `<div class="no-item">
                 <p>Giỏ hàng của bạn trống</p>
-            </div>`
-            }
-            else {
-                document.getElementById("cart-sidebar").innerHTML= "<ul class='list-item-cart'>" + result?.map?.(item=> `
+            </div>`;
+        } else {
+          document.getElementById("cart-sidebar").innerHTML =
+            "<ul class='list-item-cart'>" +
+            result
+              ?.map?.(
+                (item) => `
                     <li class="item productid-0">
                         <div class="border_list">
                             <a class="product-image" href="http://127.0.0.1:5500/product.html?productId=${item.id_product}" title="${item.product_name}">
@@ -1093,60 +1154,75 @@
                         </div>
                     </li>
                     
-                `).join("") + "</ul>"+ 
-                `<div class="pd">
+                `
+              )
+              .join("") +
+            "</ul>" +
+            `<div class="pd">
                         <div class="top-subtotal">Thành tiền: <span id="total-price" class="price total-price">0đ</span></div>
                         <div class="top-subtotal">Tổng số: <span class="price total-price">0đ</span></div>
                     </div>
                     <div class="pd right_ct">
                         <a href="http://127.0.0.1:5500/cart.html" class="btn btn-primary"><span>Giỏ hàng</span></a>
                         <a href="http://127.0.0.1:5500/checkout.html" class="btn btn-white"><span>Thanh toán</span></a>
-                    </div>`
+                    </div>`;
 
-                $(".total-price").html(numberWithCommas(_.sumBy(result, function(e){ 
-                  if(parseInt(e.discount) > 0) {
-                    return parseInt(e.amount) * parseInt(e.price) * (1 - parseInt(e.discount) / 100)
-                  }
-                  else {
-                    return parseInt(e.amount) * parseInt(e.price)
-                  }
-                })))
-                $(".count_item").html(_.sumBy(result, function(e){ return parseInt(e.amount)}))
-            }
+          $(".total-price").html(
+            numberWithCommas(
+              _.sumBy(result, function (e) {
+                if (parseInt(e.discount) > 0) {
+                  return (
+                    parseInt(e.amount) *
+                    parseInt(e.price) *
+                    (1 - parseInt(e.discount) / 100)
+                  );
+                } else {
+                  return parseInt(e.amount) * parseInt(e.price);
+                }
+              })
+            )
+          );
+          $(".count_item").html(
+            _.sumBy(result, function (e) {
+              return parseInt(e.amount);
+            })
+          );
         }
-        else {
-            document.getElementById("cart-sidebar").innerHTML= `<div class="no-item">
+      } else {
+        document.getElementById(
+          "cart-sidebar"
+        ).innerHTML = `<div class="no-item">
                 <p>Đăng nhập để tiếp tục</p>
-            </div>`
-        }
+            </div>`;
+      }
     }
     // get_cart()
 
-    async function remove_item_cart() {
-
-    }
-</script>
+    async function remove_item_cart() {}
+  </script>
 
   <script>
     async function checkLogin() {
-      if(Cookies.get("uid")) {
-        const res= await axios({
-          url: "http://localhost:8000/",
+      if (Cookies.get("uid")) {
+        const res = await axios({
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
           method: "post",
           data: {
-            id_user: Cookies.get("uid")
-          }
-        })
-        const result= await res.data  
-        document.getElementById("name-user-x").innerHTML= result[0].username
-        document.getElementById("logout-user-x").innerHTML= `<div class="jkdjksdjksldsas" onclick="logout()">Đăng xuất</div>`
-        return console.log(result)
+            id_user: Cookies.get("uid"),
+          },
+        });
+        const result = await res.data;
+        document.getElementById("name-user-x").innerHTML = result[0].username;
+        document.getElementById(
+          "logout-user-x"
+        ).innerHTML = `<div class="jkdjksdjksldsas" onclick="logout()">Đăng xuất</div>`;
+        return console.log(result);
       }
     }
-    checkLogin()
+    checkLogin();
     function logout() {
-      Cookies.remove("uid")
-      return window.location.reload()
+      Cookies.remove("uid");
+      return window.location.reload();
     }
   </script>
   <script>
@@ -1157,40 +1233,41 @@
       swal("Thông báo", "Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không ?", {
         buttons: {
           cancel: "Hủy",
-          ok: "Xóa"
+          ok: "Xóa",
         },
-      })
-      .then(async (value) => {
+      }).then(async (value) => {
         switch (value) {
           case "cancel":
-            break
+            break;
           case "ok":
-            const res= await axios({
-              url: "http://localhost:8000/delete_cart/item",
+            const res = await axios({
+              url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/delete_cart/item",
               method: "post",
               data: {
                 id_product: id,
-                id_user: Cookies.get("uid")
-              }
-            
-            })
-            const result= await res.data
-            swal("Thông báo", "Xóa sản phẩm khỏi giỏ hàng thành công", "success")
-            .then(()=> window.location.reload())
+                id_user: Cookies.get("uid"),
+              },
+            });
+            const result = await res.data;
+            swal(
+              "Thông báo",
+              "Xóa sản phẩm khỏi giỏ hàng thành công",
+              "success"
+            ).then(() => window.location.reload());
             break;
-          
+
           default:
-            break
+            break;
         }
       });
       // const res= await axios({
-      //   url: "http://localhost:8000/delete_cart/item",
+      //   url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/delete_cart/item",
       //   method: "post",
       //   data: {
       //     id_product: id,
       //     id_user: Cookies.get("uid")
       //   }
-      
+
       // })
       // const result= await res.data
       // return window.location.reload()
@@ -1198,27 +1275,31 @@
   </script>
   <script>
     function wait(ms) {
-        return new Promise(resolve=> setTimeout(resolve, ms))
+      return new Promise((resolve) => setTimeout(resolve, ms));
     }
-    let a= 0
+    let a = 0;
     async function updateAmount(id, price, amount, count, amount_product) {
-      setTimeout(async ()=> {
-        if(parseInt($(`#sum-p-${id}`).html().replaceAll(",", "").replace("đ", "")) == parseInt(price) && amount == -1) {
-        return swal("Thông báo", "Không thể bớt sản phẩm được nữa")
-      }
-      if(parseInt($(`#amount-product-${id}`).val()) > parseInt(amount_product) ) {
-        $(`#amount-product-${id}`).val(amount_product)
-        return swal("Thông báo", "Đã quá số lượng sản phẩm cho phép")
-
-      }
-      if($(`#amount-product-${id}`).val() <1 ) {
-        return
-      }
-      
-      else {
-        a = parseInt(a) + parseInt(amount)
-        const res = await axios({
-            url: "http://localhost:8000/add_to_cart",
+      setTimeout(async () => {
+        if (
+          parseInt(
+            $(`#sum-p-${id}`).html().replaceAll(",", "").replace("đ", "")
+          ) == parseInt(price) &&
+          amount == -1
+        ) {
+          return swal("Thông báo", "Không thể bớt sản phẩm được nữa");
+        }
+        if (
+          parseInt($(`#amount-product-${id}`).val()) > parseInt(amount_product)
+        ) {
+          $(`#amount-product-${id}`).val(amount_product);
+          return swal("Thông báo", "Đã quá số lượng sản phẩm cho phép");
+        }
+        if ($(`#amount-product-${id}`).val() < 1) {
+          return;
+        } else {
+          a = parseInt(a) + parseInt(amount);
+          const res = await axios({
+            url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add_to_cart",
             method: "post",
             data: {
               id_product: id,
@@ -1227,10 +1308,24 @@
             },
           });
           const result = await res.data;
-          $(`#sum-p-${id}`).html(numberWithCommas(Math.round(parseInt(parseInt($(`#sum-p-${id}`).html()) + parseInt((parseInt(count)+ parseInt(a)) * price)) / 1000) * 1000)+ "đ")
-          $(".total-price").html(numberWithCommas(parseInt($(".total-price").html().replaceAll(",", ""))+ parseInt((parseInt(amount)) * price)) + "đ")
+          $(`#sum-p-${id}`).html(
+            numberWithCommas(
+              Math.round(
+                parseInt(
+                  parseInt($(`#sum-p-${id}`).html()) +
+                    parseInt((parseInt(count) + parseInt(a)) * price)
+                ) / 1000
+              ) * 1000
+            ) + "đ"
+          );
+          $(".total-price").html(
+            numberWithCommas(
+              parseInt($(".total-price").html().replaceAll(",", "")) +
+                parseInt(parseInt(amount) * price)
+            ) + "đ"
+          );
         }
-      }, 1000)
+      }, 1000);
     }
   </script>
 </html>

@@ -28,9 +28,24 @@
     />
     <script src="catalog/view/theme/default/javascript/library/jquery.min.js"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"
+      integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+      integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
       #main-content-payment {
@@ -144,7 +159,9 @@
             </svg>
           </div>
           <div class="order-summary-toggle-total-recap">
-            <span id="final-total-price-2" class="total-recap-final-price">0đ</span>
+            <span id="final-total-price-2" class="total-recap-final-price"
+              >0đ</span
+            >
           </div>
         </div>
       </div>
@@ -161,9 +178,7 @@
                   data-order-summary-section="line-items"
                 >
                   <table class="product-table">
-                    <tbody id="list-checkout">
-                      
-                    </tbody>
+                    <tbody id="list-checkout"></tbody>
                   </table>
                 </div>
 
@@ -178,7 +193,9 @@
                           <tr class="row-total-amount">
                             <td class="text-left">Thành tiền</td>
                             <td class="text-right">
-                              <strong id="total-price" class="">1,700,000đ</strong>
+                              <strong id="total-price" class=""
+                                >1,700,000đ</strong
+                              >
                             </td>
                           </tr>
                           <tr class="row-total-amount">
@@ -190,7 +207,9 @@
                           <tr class="row-total-amount">
                             <td class="text-left">Tổng số</td>
                             <td class="text-right">
-                              <strong id="final-total-price" class="text-danger">1,750,000đ</strong>
+                              <strong id="final-total-price" class="text-danger"
+                                >1,750,000đ</strong
+                              >
                             </td>
                           </tr>
                         </tbody>
@@ -256,7 +275,7 @@
                     <div
                       class="section-content section-customer-information no-mb"
                     >
-                      <br>
+                      <br />
                       <div class="fieldset">
                         <div class="field required">
                           <div class="field-input-wrapper">
@@ -680,7 +699,6 @@
                     </div>
                   </div>
                 </div>
-                
 
                 <div class="form-group hidden">
                   <div class="col-sm-12">
@@ -1125,7 +1143,7 @@
                       class="step-footer-continue-btn btn btn-step"
                       id="btn-to-checkout"
                     >
-                      <span  class="btn-content"
+                      <span class="btn-content"
                         >Tiếp tục đến thanh toán phương thức</span
                       >
                       <i class="btn-spinner icon icon-button-spinner"></i>
@@ -1149,7 +1167,6 @@
                       id="submit_form_button"
                       type="button"
                       class="step-footer-continue-btn btn"
-                      
                     >
                       Đặt hàng
                     </button>
@@ -1167,7 +1184,7 @@
           <style>
             #choose-payment-method {
               margin-bottom: 12px;
-              display: none
+              display: none;
             }
             .title-cawa {
               font-size: 20px;
@@ -1204,7 +1221,7 @@
               border-radius: 5px;
             }
           </style>
-          <div id="choose-payment-method" >
+          <div id="choose-payment-method">
             <div class="title-cawa">Vận chuyển</div>
             <div id="content-ads-eass" class="content-ads-eass method-1">
               <div>
@@ -1212,42 +1229,56 @@
               </div>
               <div>50,000đ</div>
             </div>
-            <br>
+            <br />
             <div id="content-ads-eass" class="content-ads-eass method-2">
               <div>
-                <div class="dsjdkjsateatra" style="margin-bottom: 12px">Thanh toán bằng momo</div>
-                <div  style="margin-bottom: 12px">Số tài khoản: <span id="momo-account"></span></div>
+                <div class="dsjdkjsateatra" style="margin-bottom: 12px">
+                  Thanh toán bằng momo
+                </div>
+                <div style="margin-bottom: 12px">
+                  Số tài khoản: <span id="momo-account"></span>
+                </div>
                 <div>Tên tài khoản: <span id="momo-name"></span></div>
               </div>
             </div>
-            <br>
-            <br>
+            <br />
+            <br />
             <!-- <div class="title-cawa">Giao hàng trực tuyến</div> -->
             <div class="content-dsdsdd-dfgfd method-3">
               <div>
                 <div class="dsjdkjsateatra">Chuyển khoản</div>
-                <div>Sử dụng thẻ ATM hoặc dịch vụ Internet Banking để tiến hành chuyển khoản cho chúng tôi</div>
+                <div>
+                  Sử dụng thẻ ATM hoặc dịch vụ Internet Banking để tiến hành
+                  chuyển khoản cho chúng tôi
+                </div>
               </div>
-              <br>
+              <br />
               <div class="skdjdkjgkdasdasd">
-                  <div>Cảm ơn bạn đã đặt hàng. Đây là số tài khoản của bạn:</div>
-                  <br>
-                  <br>
-                  <div>Số tài khoản: <strong id="account-number"></strong></div>
-                  <br>
-                  <br>
-                  <div>Tên tài khoản: <strong id="account-name"></strong></div>
-                  <br>
-                  <br>
-                  <div>Ngân hàng : <strong id="bank-name"></strong></div>
-                  <br>
-                  <br>
-                  <div>Chi nhánh : <strong id="branch"></strong></div>
-                  <br>
+                <div>Cảm ơn bạn đã đặt hàng. Đây là số tài khoản của bạn:</div>
+                <br />
+                <br />
+                <div>Số tài khoản: <strong id="account-number"></strong></div>
+                <br />
+                <br />
+                <div>Tên tài khoản: <strong id="account-name"></strong></div>
+                <br />
+                <br />
+                <div>Ngân hàng : <strong id="bank-name"></strong></div>
+                <br />
+                <br />
+                <div>Chi nhánh : <strong id="branch"></strong></div>
+                <br />
               </div>
             </div>
-            <br>
-            <div style="width: 100%; display: flex; justify-content: center; align-items: center">
+            <br />
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
               <div></div>
               <button
                 type="button"
@@ -1255,75 +1286,90 @@
                 id="button-validate-form"
                 onclick="payment()"
               >
-                <span id="btn-to-checkout" class="btn-content"
-                  >Đặt hàng</span
-                >
+                <span id="btn-to-checkout" class="btn-content">Đặt hàng</span>
                 <i class="btn-spinner icon icon-button-spinner"></i>
               </button>
             </div>
-            <br>
-            <div>Bạn muốn thay đổi thông tin ngân hàng? </div>
-              <br>
-              <div onclick="toChangeBank()" style="display: flex; justify-content: center;align-items: center;padding: 10px 20px;border-radius: 80px; cursor: pointer;background-color: #2e89ff;color: #fff;width: max-content;">
-                Thay đổi ngân hàng
-              </div>
+            <br />
+            <div>Bạn muốn thay đổi thông tin ngân hàng?</div>
+            <br />
+            <div
+              onclick="toChangeBank()"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 20px;
+                border-radius: 80px;
+                cursor: pointer;
+                background-color: #2e89ff;
+                color: #fff;
+                width: max-content;
+              "
+            >
+              Thay đổi ngân hàng
             </div>
+          </div>
           <div class="main-footer footer-powered-by">
             <span id="copyright">&copy; Copyright 2020-2022 . </span>
           </div>
-          
         </div>
       </div>
     </div>
     <script>
       function toChangeBank() {
-        return window.location.href= "http://127.0.0.1:5500/profile.html"
+        return (window.location.href = "http://127.0.0.1:5500/profile.html");
       }
     </script>
     <script>
       async function getBank() {
-          const res= await axios({
-              url: "http://localhost:8000/user/bank",
-              method: "get",
-              params: {
-                id_user: Cookies.get("uid")
-              }
-          })
-          const result= await res.data
-          document.getElementById("account-number").innerHTML= result[0]?.account_number || "_"
-          document.getElementById("account-name").innerHTML = result[0]?.account_name || "_"
-          document.getElementById("bank-name").innerHTML = result[0]?.bank_name || "_"
-          document.getElementById("branch").innerHTML = result[0]?.branch || "_"
+        const res = await axios({
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/user/bank",
+          method: "get",
+          params: {
+            id_user: Cookies.get("uid"),
+          },
+        });
+        const result = await res.data;
+        document.getElementById("account-number").innerHTML =
+          result[0]?.account_number || "_";
+        document.getElementById("account-name").innerHTML =
+          result[0]?.account_name || "_";
+        document.getElementById("bank-name").innerHTML =
+          result[0]?.bank_name || "_";
+        document.getElementById("branch").innerHTML = result[0]?.branch || "_";
       }
-      getBank()
-  </script>
+      getBank();
+    </script>
   </body>
- 
+
   <script>
-    let arr_product= []
-    let total_price= 0
+    let arr_product = [];
+    let total_price = 0;
 
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/get_cart",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
           },
         });
         const result = await res.data;
-        arr_product= result
-        checkPaymentMomo()
+        arr_product = result;
+        checkPaymentMomo();
 
-        if(result?.length <= 0 ) {
-            document.getElementById("list-checkout").innerHTML= `<div class="no-item">
+        if (result?.length <= 0) {
+          document.getElementById(
+            "list-checkout"
+          ).innerHTML = `<div class="no-item">
             <p>Giỏ hàng của bạn trống</p>
-        </div>`
-        }
-        else {
-            document.getElementById("list-checkout").innerHTML= result?.map?.(item=> {
-              if(parseInt(item.discount) > 0) {
+        </div>`;
+        } else {
+          document.getElementById("list-checkout").innerHTML = result
+            ?.map?.((item) => {
+              if (parseInt(item.discount) > 0) {
                 return `
             <tr class="product" data-variant-id="9898">
               <td class="product-image">
@@ -1351,13 +1397,16 @@
               </td>
               <td class="product-quantity visually-hidden">${item.amount}</td>
               <td class="product-price">
-                <span class="order-summary-emphasis">${numberWithCommas(parseInt(item.amount) * parseInt(item.price) * (1 - parseInt(item.discount) / 100))}đ</span>
+                <span class="order-summary-emphasis">${numberWithCommas(
+                  parseInt(item.amount) *
+                    parseInt(item.price) *
+                    (1 - parseInt(item.discount) / 100)
+                )}đ</span>
               </td>
             </tr>
 
-            `
-              }
-              else {
+            `;
+              } else {
                 return `
             <tr class="product" data-variant-id="9898">
               <td class="product-image">
@@ -1385,52 +1434,73 @@
               </td>
               <td class="product-quantity visually-hidden">${item.amount}</td>
               <td class="product-price">
-                <span class="order-summary-emphasis">${numberWithCommas(parseInt(item.amount) * parseInt(item.price))}đ</span>
+                <span class="order-summary-emphasis">${numberWithCommas(
+                  parseInt(item.amount) * parseInt(item.price)
+                )}đ</span>
               </td>
             </tr>
 
-            `
+            `;
               }
-            }).join("")
+            })
+            .join("");
         }
         // document.getElementById("count-cart").innerHTML= result.length
-        document.getElementById("total-price").innerHTML= numberWithCommas(_.sumBy(result, function(e) {
-          if(parseInt(e.discount) > 0) {
-            return parseInt(e.amount) * parseInt(e.price) * (1 - parseInt(e.discount) / 100)
-            
-          }
-          else {
-            return parseInt(e.amount) * parseInt(e.price)
-          }
-        }))+ "đ"
-        
-        document.getElementById("final-total-price").innerHTML= numberWithCommas(_.sumBy(result, function(e) {
-          if(parseInt(e.discount) > 0) {
-            return parseInt(e.amount) * parseInt(e.price) * (1 - parseInt(e.discount) / 100)
-            
-          }
-          else {
-            return parseInt(e.amount) * parseInt(e.price)
-          }
-        }) + 50000)+ "đ"
-        total_price= _.sumBy(result, function(e) {
-          if(parseInt(e.discount) > 0) {
-            return parseInt(e.amount) * parseInt(e.price) * (1 - parseInt(e.discount) / 100)
-            
-          }
-          else {
-            return parseInt(e.amount) * parseInt(e.price)
-          }
-        }) + 50000
-        document.getElementById("final-total-price-2").innerHTML= numberWithCommas(_.sumBy(result, function(e) {
-          if(parseInt(e.discount) > 0) {
-            return parseInt(e.amount) * parseInt(e.price) * (1 - parseInt(e.discount) / 100)
-            
-          }
-          else {
-            return parseInt(e.amount) * parseInt(e.price)
-          }
-        }) + 50000)+ "đ"
+        document.getElementById("total-price").innerHTML =
+          numberWithCommas(
+            _.sumBy(result, function (e) {
+              if (parseInt(e.discount) > 0) {
+                return (
+                  parseInt(e.amount) *
+                  parseInt(e.price) *
+                  (1 - parseInt(e.discount) / 100)
+                );
+              } else {
+                return parseInt(e.amount) * parseInt(e.price);
+              }
+            })
+          ) + "đ";
+
+        document.getElementById("final-total-price").innerHTML =
+          numberWithCommas(
+            _.sumBy(result, function (e) {
+              if (parseInt(e.discount) > 0) {
+                return (
+                  parseInt(e.amount) *
+                  parseInt(e.price) *
+                  (1 - parseInt(e.discount) / 100)
+                );
+              } else {
+                return parseInt(e.amount) * parseInt(e.price);
+              }
+            }) + 50000
+          ) + "đ";
+        total_price =
+          _.sumBy(result, function (e) {
+            if (parseInt(e.discount) > 0) {
+              return (
+                parseInt(e.amount) *
+                parseInt(e.price) *
+                (1 - parseInt(e.discount) / 100)
+              );
+            } else {
+              return parseInt(e.amount) * parseInt(e.price);
+            }
+          }) + 50000;
+        document.getElementById("final-total-price-2").innerHTML =
+          numberWithCommas(
+            _.sumBy(result, function (e) {
+              if (parseInt(e.discount) > 0) {
+                return (
+                  parseInt(e.amount) *
+                  parseInt(e.price) *
+                  (1 - parseInt(e.discount) / 100)
+                );
+              } else {
+                return parseInt(e.amount) * parseInt(e.price);
+              }
+            }) + 50000
+          ) + "đ";
       } else {
         document.getElementById(
           "list-checkout"
@@ -1442,233 +1512,275 @@
     get_cart();
   </script>
   <script>
-    const emailRegex= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    const phoneRegex= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const phoneRegex =
+      /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
     function validateEmail(str, regex) {
-      if(regex.test(str)) {
-        return true
+      if (regex.test(str)) {
+        return true;
       }
-      return false
+      return false;
     }
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  $("#input-username").on("blur", function() {
-    if($(this).val()?.length <=0 ) {
-      $("#msg1").html("Không được để trống tên của bạn !")
     }
-    else {
-      $("#msg1").html("")
+    $("#input-username").on("blur", function () {
+      if ($(this).val()?.length <= 0) {
+        $("#msg1").html("Không được để trống tên của bạn !");
+      } else {
+        $("#msg1").html("");
+      }
+    });
+    $("#input-email").on("blur", function () {
+      if (!validateEmail($(this).val(), emailRegex)) {
+        $("#msg2").html("Email không hợp lệ. Vui lòng thử lại !");
+      } else {
+        $("#msg2").html("");
+      }
+    });
+    $("#input-telephone").on("blur", function () {
+      if (!validateEmail($(this).val(), phoneRegex)) {
+        $("#msg3").html("Số điện thoại không hợp lệ. Vui lòng thử lại !");
+      } else {
+        $("#msg3").html("");
+      }
+    });
+    $("#input-address").on("blur", function () {
+      if ($(this).val()?.length < 20) {
+        $("#msg4").html(
+          "Không được để trống địa chỉ. Địa chỉ phải có ít nhất 20 từ"
+        );
+      } else {
+        $("#msg4").html("");
+      }
+    });
+  </script>
+  <style>
+    .splash-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #242526;
     }
-  })
-  $("#input-email").on("blur", function() {
-    if(!validateEmail($(this).val(), emailRegex) ) {
-      $("#msg2").html("Email không hợp lệ. Vui lòng thử lại !")
+  </style>
+  <div id="splash-screen" class="splash-screen" style="display: none">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script>
+    async function checkPaymentMomo() {
+      if (
+        parseInt(
+          new URLSearchParams(window.location.search).get("resultCode")
+        ) === 0 &&
+        arr_product?.length > 0
+      ) {
+        $("#splash-screen").css("display", "flex");
+        let id_payment = uuid.v4();
+        const res = await axios({
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/checkout/payment",
+          method: "post",
+          data: {
+            username: localStorage.getItem("username"),
+            email: localStorage.getItem("email"),
+            address: localStorage.getItem("address"),
+            phone_number: localStorage.getItem("phone_number"),
+            province: "",
+            note: localStorage.getItem("note"),
+            id_user: Cookies.get("uid"),
+            id_payment: id_payment,
+            time_created: new Date(),
+            method_name: "Thanh toán momo",
+            state_order: 1,
+          },
+        });
+        const arr_promise = [];
+        // const promisePaymentItem=
+        arr_product.map((item) =>
+          arr_promise.push(
+            axios({
+              url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/payment/item/cart",
+              method: "post",
+              data: {
+                id_product: item.id_product,
+                amount: parseInt(item.amount),
+                id_payment: id_payment,
+                id_user: Cookies.get("uid"),
+                discount: parseInt(item.discount),
+                time_create: new Date(),
+              },
+            })
+          )
+        );
+        await Promise.all(arr_promise).then(function (values) {
+          return (window.location.href =
+            window.location.origin + "/success.html?idPayment=" + id_payment);
+        });
+      }
     }
-    else {
-      $("#msg2").html("")
+  </script>
+  <script>
+    async function payment() {
+      document.getElementById(
+        "button-validate-form"
+      ).innerHTML = `<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`;
+      if (method == 0) {
+        return swal(
+          "Thông báo",
+          "Bạn phải chọn phương thức thanh toán để tiếp tục",
+          "success"
+        );
+      }
+      if (
+        method == 2 &&
+        ($("#momo-account").html() == "_" || $("#momo-name").html() == "_")
+      ) {
+        return swal("Thông báo", "Vui lòng nhập số momo của bạn", "success");
+      }
+      if (
+        method == 3 &&
+        ($("#account-number").html() == "_" ||
+          $("#account-name").html() == "_" ||
+          $("#bank-name").html() == "_" ||
+          $("#branch").html() == "_")
+      ) {
+        return swal(
+          "Thông báo",
+          "Vui lòng nhập số tài khoản ngân hàng của bạn của bạn",
+          "success"
+        );
+      }
+      if (method == 2) {
+        localStorage.setItem("username", $("#input-username").val());
+        localStorage.setItem("email", $("#input-email").val());
+        localStorage.setItem("address", $("#input-address").val());
+        localStorage.setItem("phone_number", $("#input-telephone").val());
+        localStorage.setItem("note", $("#input-comment").val());
+        const resMomo = await axios({
+          url: "https://itchy-dirndl-frog.cyclic.app/payment-momo",
+          method: "POST",
+          data: {
+            amount: total_price,
+            platform: "web",
+          },
+        });
+        const resultMomo = await resMomo.data;
+        window.location.href = resultMomo.payUrl;
+      } else {
+        let id_payment = uuid.v4();
+        const res = await axios({
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/checkout/payment",
+          method: "post",
+          data: {
+            username: $("#input-username").val(),
+            email: $("#input-email").val(),
+            address: $("#input-address").val(),
+            phone_number: $("#input-telephone").val(),
+            province: "",
+            note: $("#input-comment").val(),
+            id_user: Cookies.get("uid"),
+            id_payment: id_payment,
+            time_created: new Date(),
+            method_name: method_name,
+          },
+        });
+        const arr_promise = [];
+        // const promisePaymentItem=
+        arr_product.map((item) =>
+          arr_promise.push(
+            axios({
+              url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/payment/item/cart",
+              method: "post",
+              data: {
+                id_product: item.id_product,
+                amount: parseInt(item.amount),
+                id_payment: id_payment,
+                id_user: Cookies.get("uid"),
+                discount: parseInt(item.discount),
+                time_create: new Date(),
+              },
+            })
+          )
+        );
+        await Promise.all(arr_promise).then(function (values) {
+          return (window.location.href =
+            window.location.origin + "/success.html?idPayment=" + id_payment);
+        });
+      }
     }
-  })
-  $("#input-telephone").on("blur",  function() {
-    if(!validateEmail($(this).val(), phoneRegex)) {
-      $("#msg3").html("Số điện thoại không hợp lệ. Vui lòng thử lại !")
-    }
-    else {
-      $("#msg3").html("")
-    }
-  })
-  $("#input-address").on("blur",  function() {
-    if($(this).val()?.length < 20) {
-      $("#msg4").html("Không được để trống địa chỉ. Địa chỉ phải có ít nhất 20 từ")
-    }
-    else {
-      $("#msg4").html("")
-    }
-  })
-</script>
-<style>
-  .splash-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #242526;
-
-  }
-</style>
-<div id="splash-screen" class="splash-screen" style="display: none;">
-  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-</div>
-<script>
-  async function checkPaymentMomo() {
-    if(parseInt(new URLSearchParams(window.location.search).get("resultCode")) === 0 && arr_product?.length > 0) {
-      $("#splash-screen").css("display", "flex")
-      let id_payment= uuid.v4()
-      const res= await axios({
-        url: "http://localhost:8000/checkout/payment",
-        method: "post",
-        data: {
-          username: localStorage.getItem("username"),
-          email: localStorage.getItem("email"),
-          address: localStorage.getItem("address"),
-          phone_number: localStorage.getItem("phone_number"),
-          province: "",
-          note: localStorage.getItem("note"),
+  </script>
+  <script>
+    let method = 0;
+    let method_name = "";
+    document.getElementById("btn-to-checkout").onclick = function () {
+      if (
+        $("#msg1").html().length > 0 ||
+        $("#msg2").html().length > 0 ||
+        $("#msg3").html().length > 0 ||
+        $("#msg4").html().length > 0 ||
+        $("#input-username").val().length <= 0 ||
+        $("#input-email").val().length <= 0 ||
+        $("#input-telephone").val().length <= 0 ||
+        $("#input-address").val().length <= 0
+      ) {
+        swal(
+          "Thông báo",
+          "Bạn cần phải điền đầy đủ thông tin để tiếp tục",
+          "success"
+        );
+      } else {
+        document.getElementById("main-content-payment").style.display = "none";
+        document.getElementById("choose-payment-method").style.display =
+          "block";
+      }
+    };
+    $(".method-1").on("click", function () {
+      $(this).css("border-color", "#2e89ff");
+      $(".method-2").css("border-color", "#e7e7e7");
+      $(".method-3").css("border-color", "#e7e7e7");
+      method = 1;
+      method_name = "Giao hàng tận nơi";
+    });
+    $(".method-2").on("click", function () {
+      $(this).css("border-color", "#2e89ff");
+      $(".method-1").css("border-color", "#e7e7e7");
+      $(".method-3").css("border-color", "#e7e7e7");
+      method = 2;
+      method_name = "Thanh toán bằng momo";
+    });
+    $(".method-3").on("click", function () {
+      $(this).css("border-color", "#2e89ff");
+      $(".method-2").css("border-color", "#e7e7e7");
+      $(".method-1").css("border-color", "#e7e7e7");
+      method = 3;
+      method_name = "Thanh toán bằng atm";
+    });
+  </script>
+  <script>
+    async function getMomo() {
+      const res = await axios({
+        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get/momo",
+        method: "get",
+        params: {
           id_user: Cookies.get("uid"),
-          id_payment: id_payment,
-          time_created: new Date(),
-          method_name: "Thanh toán momo",
-          state_order: 1
-        }
-      })
-      const arr_promise= []
-      // const promisePaymentItem= 
-      arr_product.map(item=> arr_promise.push(axios({
-        url: "http://localhost:8000/payment/item/cart",
-        method: "post",
-        data: {
-          id_product: item.id_product,
-          amount: parseInt(item.amount),
-          id_payment: id_payment,
-          id_user: Cookies.get("uid"),
-          discount: parseInt(item.discount),
-          time_create: new Date()
-        }
-      })))
-      await Promise.all(arr_promise)
-      .then(function(values) {
-        return window.location.href= window.location.origin+ "/success.html?idPayment="+id_payment
-      })
-    }
-  }
-</script>
-<script>
-  async function payment() {
-    document.getElementById("button-validate-form").innerHTML= `<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`
-    if(method== 0) {
-      return swal("Thông báo", "Bạn phải chọn phương thức thanh toán để tiếp tục", "success")
-    }
-    if(method== 2 && ($("#momo-account").html()== "_" || $("#momo-name").html()== "_")) {
-      return swal("Thông báo", "Vui lòng nhập số momo của bạn", "success")
-    }
-    if(method== 3 && ($("#account-number").html()== "_" || $("#account-name").html()== "_"|| $("#bank-name").html()== "_"|| $("#branch").html()== "_")) {
-      return swal("Thông báo", "Vui lòng nhập số tài khoản ngân hàng của bạn của bạn", "success")
-    }
-    if(method== 2) {
-      localStorage.setItem("username", $("#input-username").val())
-      localStorage.setItem("email", $("#input-email").val())
-      localStorage.setItem("address", $("#input-address").val())
-      localStorage.setItem("phone_number", $("#input-telephone").val())
-      localStorage.setItem("note", $("#input-comment").val())
-      const resMomo= await axios({
-        url: "https://itchy-dirndl-frog.cyclic.app/payment-momo",
-        method: "POST",
-        data: {
-          amount: total_price,
-          platform: "web"
-        }
-      })
-      const resultMomo= await resMomo.data
-      window.location.href= resultMomo.payUrl
-    }
-    else {
-
-      let id_payment= uuid.v4()
-      const res= await axios({
-        url: "http://localhost:8000/checkout/payment",
-        method: "post",
-        data: {
-          username: $("#input-username").val(),
-          email: $("#input-email").val(),
-          address: $("#input-address").val(),
-          phone_number: $("#input-telephone").val(),
-          province: "",
-          note: $("#input-comment").val(),
-          id_user: Cookies.get("uid"),
-          id_payment: id_payment,
-          time_created: new Date(),
-          method_name: method_name
-        }
-      })
-      const arr_promise= []
-      // const promisePaymentItem= 
-      arr_product.map(item=> arr_promise.push(axios({
-        url: "http://localhost:8000/payment/item/cart",
-        method: "post",
-        data: {
-          id_product: item.id_product,
-          amount: parseInt(item.amount),
-          id_payment: id_payment,
-          id_user: Cookies.get("uid"),
-          discount: parseInt(item.discount),
-          time_create: new Date()
-        }
-      })))
-      await Promise.all(arr_promise)
-      .then(function(values) {
-        return window.location.href= window.location.origin+ "/success.html?idPayment="+id_payment
-      })
-    }
-  }
-</script>
-<script>
-  let method= 0
-  let method_name= ""
-  document.getElementById("btn-to-checkout").onclick= function() {
-    if($("#msg1").html().length > 0 || $("#msg2").html().length > 0 || $("#msg3").html().length > 0 || $("#msg4").html().length > 0 || $("#input-username").val().length <= 0 || $("#input-email").val().length <= 0 || $("#input-telephone").val().length <= 0 || $("#input-address").val().length <= 0) {
-      swal("Thông báo", "Bạn cần phải điền đầy đủ thông tin để tiếp tục", "success")
-    }
-    else {
-      document.getElementById("main-content-payment").style.display= "none"
-      document.getElementById("choose-payment-method").style.display= "block"
-    }
-  }
-  $(".method-1").on("click", function(){ 
-    $(this).css("border-color", "#2e89ff")
-    $(".method-2").css("border-color", "#e7e7e7")
-    $(".method-3").css("border-color", "#e7e7e7")
-    method= 1
-    method_name= "Giao hàng tận nơi"
-  })
-  $(".method-2").on("click", function(){ 
-    $(this).css("border-color", "#2e89ff")
-    $(".method-1").css("border-color", "#e7e7e7")
-    $(".method-3").css("border-color", "#e7e7e7")
-    method= 2
-    method_name= "Thanh toán bằng momo"
-
-
-  })
-  $(".method-3").on("click", function(){ 
-    $(this).css("border-color", "#2e89ff")
-    $(".method-2").css("border-color", "#e7e7e7")
-    $(".method-1").css("border-color", "#e7e7e7")
-    method= 3
-    method_name= "Thanh toán bằng atm"
-
-  })
-</script>
-<script>
-  async function getMomo() {
-      const res= await axios({
-          url: "http://localhost:8000/get/momo",
-          method: "get",
-          params: {
-              id_user: Cookies.get("uid")
-          }
-      })
-      const result= await res.data
+        },
+      });
+      const result = await res.data;
       // document.getElementById("account-number-mm").innerHTML= result[0]?.momo_name || "_"
       // document.getElementById("account-name-mm").innerHTML = result[0]?.momo_account || "_"
-      $("#momo-account").html(result[0]?.momo_name || "_")
-      $("#momo-name").html(result[0]?.momo_account || "_")
-      
-  }
-  getMomo()
-</script>
+      $("#momo-account").html(result[0]?.momo_name || "_");
+      $("#momo-name").html(result[0]?.momo_account || "_");
+    }
+    getMomo();
+  </script>
 </html>

@@ -222,7 +222,6 @@
             <li class="level0 level-top parent level_ico">
               <a href="http://127.0.0.1:5500/san-pham.html">Sản phẩm</a>
               <i class="ti-plus hide_close"></i>
-          
             </li>
             <li class="level0 level-top parent level_ico">
               <a href="http://127.0.0.1:5500/chuyen-cua-la.html">Nghe Hoa Kể</a>
@@ -414,85 +413,103 @@
                                 <i class="fa fa-search"></i></button
                             ></span>
                             <div id="search-suggest-container" class=""></div>
-                              <style>
-                                #search-suggest-container {
-                                  position: absolute;
-                                  left: 0;
-                                  top: 100%;
-                                  width: 100%;
-                                  z-index: 99999;
-                                  background-color: #fff;
-                                  border-radius: 5px;
-                                  /* border: 1px solid #e7e7e7; */
-                                  max-height: 400px;
-                                  overflow: auto;
-                                  gap: 20px
+                            <style>
+                              #search-suggest-container {
+                                position: absolute;
+                                left: 0;
+                                top: 100%;
+                                width: 100%;
+                                z-index: 99999;
+                                background-color: #fff;
+                                border-radius: 5px;
+                                /* border: 1px solid #e7e7e7; */
+                                max-height: 400px;
+                                overflow: auto;
+                                gap: 20px;
+                              }
+                              .item-suggest-list {
+                                padding: 10px;
+                                border-bottom: 1px solid #e7e7e7;
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+                              }
+                              .item-img-suggest {
+                                width: 80px;
+                                height: 80px;
+                                border-radius: 5px;
+                                object-fit: contain;
+                              }
+                              .product-name-img-suggest {
+                                font-size: 18px;
+                                font-weight: 600;
+                              }
+                              .item-ax-wac {
+                                margin-left: 16px;
+                              }
+                              .item-sa-dae-d {
+                                margin-top: 10px;
+                              }
+                            </style>
+                            <script>
+                              const options = {
+                                keys: [
+                                  "product_name",
+                                  "category_name",
+                                  "price",
+                                ],
+                              };
+                              let fuse;
+                              async function getProduct() {
+                                const res = await axios({
+                                  url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
+                                  method: "get",
+                                });
+                                const result = await res.data;
+                                fuse = new Fuse(result, options);
+                              }
+                              getProduct();
+                              $("#query_search").on("change", function () {
+                                if ($(this).val()?.length <= 0) {
+                                  document.getElementById(
+                                    "search-suggest-container"
+                                  ).style.opacity = 0;
                                 }
-                                .item-suggest-list {
-                                  padding: 10px;
-                                  border-bottom: 1px solid #e7e7e7;
-                                  display: flex;
-                                  align-items: center;
-                                  cursor: pointer;
+                              });
+                              $("#query_search").on("keyup", function () {
+                                if ($(this).val().length > 0) {
+                                  document.getElementById(
+                                    "search-suggest-container"
+                                  ).style.opacity = 1;
                                 }
-                                .item-img-suggest {
-                                  width: 80px;
-                                  height: 80px;
-                                  border-radius: 5px;
-                                  object-fit: contain;
-                                }
-                                .product-name-img-suggest {
-                                  font-size: 18px;
-                                  font-weight: 600;
-                                }
-                                .item-ax-wac {
-                                  margin-left: 16px;
-                                }
-                                .item-sa-dae-d {
-                                  margin-top: 10px;
-          
-                                }
-                              </style>
-                              <script>
-                                const options = {
-                                  keys: [
-                                    "product_name",
-                                    "category_name",
-                                    "price"
-                                  ]
-                                };
-                                let fuse;
-                                async function getProduct() {
-                                  const res= await axios({
-                                    url: "http://localhost:8000/list-product",
-                                    method: "get",
-                                  })
-                                  const result= await res.data
-                                  fuse = new Fuse(result, options);
-                                }
-                                getProduct()
-                                $("#query_search").on("change", function() {
-                                  if($(this).val()?.length <= 0) {
-                                    document.getElementById("search-suggest-container").style.opacity= 0
-                                  }
-                                })
-                                $("#query_search").on("keyup", function() {
-                                  if($(this).val().length >0) {
-                                    document.getElementById("search-suggest-container").style.opacity= 1
-                                  }
-                                  document.getElementById("search-suggest-container").innerHTML= fuse.search($(this).val())?.map(item=> `
-                                    <a href="http://127.0.0.1:5500/product.html?productId=${item.item.id}">
+                                document.getElementById(
+                                  "search-suggest-container"
+                                ).innerHTML = fuse
+                                  .search($(this).val())
+                                  ?.map(
+                                    (item) => `
+                                    <a href="http://127.0.0.1:5500/product.html?productId=${
+                                      item.item.id
+                                    }">
                                       <div class="item-suggest-list">
-                                        <img src="${item.item.image1}" class="item-img-suggest" />
+                                        <img src="${
+                                          item.item.image1
+                                        }" class="item-img-suggest" />
                                         <div class="item-ax-wac">
-                                          <div class="product-name-img-suggest">${item.item.product_name}</div>  
-                                          <div class="item-sa-dae-d">${numberWithCommas(parseInt(item.item.price))}đ</div>
+                                          <div class="product-name-img-suggest">${
+                                            item.item.product_name
+                                          }</div>  
+                                          <div class="item-sa-dae-d">${numberWithCommas(
+                                            parseInt(item.item.price)
+                                          )}đ</div>
                                         </div>
                                       </div>  
                                     </a>
-                                  `).join("")
-                                })
-                              </script>
+                                  `
+                                  )
+                                  .join("");
+                              });
+                            </script>
                           </div>
                         </div>
                       </div>
@@ -602,7 +619,6 @@
                             >
                               <span>Sản phẩm</span>
                             </a>
-                          
                           </li>
                           <li class="nav-item pt_menu">
                             <a
@@ -705,7 +721,9 @@
                       Tình trạng:
                       <span class="status_name availabel">Đặt trước</span>
                     </span>
-                    <div style="font-size: 18;">Số lượng còn: <strong id="amount-product"></strong></div>
+                    <div style="font-size: 18">
+                      Số lượng còn: <strong id="amount-product"></strong>
+                    </div>
                   </div>
                   <div class="price-box">
                     <span class="special-price">
@@ -777,10 +795,9 @@
                               </button>
                             </div>
                           </div>
-                          
                         </div>
                         <div id="msg"></div>
-                        <br>
+                        <br />
                         <div class="product-tab e-tabs">
                           <ul class="tabs tabs-title clearfix">
                             <li class="tab-link" data-tab="tab-description">
@@ -790,7 +807,6 @@
                           <div id="tab-description" class="tab-content">
                             <div id="product-description" class="rte"></div>
                           </div>
-                          
                         </div>
                       </form>
                     </div>
@@ -824,9 +840,7 @@
                 >
                   <div
                     class="col-xs-12 col-lg-12 col-sm-12 col-md-12 no-padding"
-                  >
-                    
-                  </div>
+                  ></div>
                 </div>
               </div>
 
@@ -1049,19 +1063,13 @@
                   <h4>Chính sách</h4>
                   <ul class="links">
                     <li>
-                      <a href="javascript:;"
-                        >Chính sách vận chuyển</a
-                      >
+                      <a href="javascript:;">Chính sách vận chuyển</a>
                     </li>
                     <li>
-                      <a href="javascript:;"
-                        >Chính sách bảo mật</a
-                      >
+                      <a href="javascript:;">Chính sách bảo mật</a>
                     </li>
                     <li>
-                      <a href="javascript:;"
-                        >Quy định &amp; Chính sách</a
-                      >
+                      <a href="javascript:;">Quy định &amp; Chính sách</a>
                     </li>
                   </ul>
                 </div>
@@ -1072,9 +1080,13 @@
                 <div class="footer-column pull-left">
                   <h4>Hỗ trợ</h4>
                   <ul class="links">
-                    <li><a href="http://127.0.0.1:5500/lien-he.html">Liên hệ</a></li>
                     <li>
-                      <a href="http://127.0.0.1:5500/gioi-thieu.html">Giới thiệu</a>
+                      <a href="http://127.0.0.1:5500/lien-he.html">Liên hệ</a>
+                    </li>
+                    <li>
+                      <a href="http://127.0.0.1:5500/gioi-thieu.html"
+                        >Giới thiệu</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -1152,15 +1164,13 @@
           </div>
         </div>
       </div>
-      <input type="hidden" id="amount-product-input">
+      <input type="hidden" id="amount-product-input" />
     </div>
-
-    
   </body>
   <script>
     async function getDetailProduct() {
       const res = await axios({
-        url: "http://localhost:8000/product/detail",
+        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/product/detail",
         method: "get",
         params: {
           id_product: new URLSearchParams(window.location.search).get(
@@ -1171,27 +1181,28 @@
       const result = await res.data;
       document.getElementById("product-description").innerHTML =
         result[0].product_description;
-      
+
       document.getElementById("product-name").innerHTML =
         result[0].product_name;
       document.getElementById("img_02").setAttribute("src", result[0].image1);
-      document.getElementById("amount-product-input").value= result[0]?.amount_product
-      document.getElementById("amount-product").innerHTML= result[0]?.amount_product || 0
-      if(parseInt(result[0]?.discount) > 0) {
+      document.getElementById("amount-product-input").value =
+        result[0]?.amount_product;
+      document.getElementById("amount-product").innerHTML =
+        result[0]?.amount_product || 0;
+      if (parseInt(result[0]?.discount) > 0) {
         document.getElementById("product-price").innerHTML = `<div>
-            <div style="color: red;">${numberWithCommas(parseInt(
-                result[0].price
-              ) * (1 - parseInt(result[0]?.discount) / 100))}đ
+            <div style="color: red;">${numberWithCommas(
+              parseInt(result[0].price) *
+                (1 - parseInt(result[0]?.discount) / 100)
+            )}đ
             </div>
             <del style=" font-size: 24px;margin: 0">
               ${numberWithCommas(parseInt(result[0].price))}đ
             </del>
           </div>`;
-      }
-      else {
-        document.getElementById("product-price").innerHTML = numberWithCommas(parseInt(
-        result[0].price
-      ))+ "đ";
+      } else {
+        document.getElementById("product-price").innerHTML =
+          numberWithCommas(parseInt(result[0].price)) + "đ";
       }
       return console.log(result);
     }
@@ -1201,7 +1212,7 @@
   <script>
     async function relateProduct() {
       const res = await axios({
-        url: "http://localhost:8000/relate_product",
+        url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/relate_product",
         method: "get",
       });
       const result = await res.data;
@@ -1219,13 +1230,19 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-left-f">
                     <div class="product-thumbnail">
                         <div class="image_container">
-                            <a class="image_link display_flex" href="http://127.0.0.1:5500/product.html?productId=${item.id}" title="${item.product_name}">
+                            <a class="image_link display_flex" href="http://127.0.0.1:5500/product.html?productId=${
+                              item.id
+                            }" title="${item.product_name}">
                                 <div class="loop_products_thumbnail_img_wrapper front">
-                                    <img src="${item.image1}" alt="${item.product_name}"
+                                    <img src="${item.image1}" alt="${
+              item.product_name
+            }"
                                     />
                                 </div>
                                 <div class="loop_products_additional_img_wrapper back">
-                                    <img src="${item.image1}" alt="${item.product_name}"
+                                    <img src="${item.image1}" alt="${
+              item.product_name
+            }"
                                     />
                                 </div>
                             </a>
@@ -1236,19 +1253,27 @@
                         <div class="product-info a-left">
                             <div class="info-inner">
                                 <h4 class="product-name">
-                                    <a class="text2line" href="http://127.0.0.1:5500/product.html?productId=${item.id}" title="${item.product_name}">${item.product_name}</a>
+                                    <a class="text2line" href="http://127.0.0.1:5500/product.html?productId=${
+                                      item.id
+                                    }" title="${item.product_name}">${
+              item.product_name
+            }</a>
                                 </h4>
                                 <div class="product-hide">
                                     <div class="price-box clearfix">
                                         <div class="special-price">
-                                            <span class="price product-price">${numberWithCommas(parseInt(item.price))}đ</span>
+                                            <span class="price product-price">${numberWithCommas(
+                                              parseInt(item.price)
+                                            )}đ</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="actions">
                                 <div class="eye-product">
-                                    <a href="http://127.0.0.1:5500/product.html?productId=${item.id}" title="${item.product_name}">
+                                    <a href="http://127.0.0.1:5500/product.html?productId=${
+                                      item.id
+                                    }" title="${item.product_name}">
                                     <img class="eye-img" src="catalog/view/theme/vision/image/eye.png" />
                                 </a>
                                 </div>
@@ -1273,15 +1298,26 @@
   <script>
     $("#button-cart").on("click", async function addToCart() {
       if (Cookies?.get("uid")) {
-        if(parseInt(document.getElementById("amount-product").innerHTML) <= 0) {
-          return swal("Thông báo", "Sản phẩm này tạm hết hàng, bạn vui lòng đặt lại sau", "success")
-        }
-        else if(parseInt(document.getElementById("amount-product").innerHTML) < parseInt($("#input-quantity").val())) {
-          return swal("Thông báo", "Bạn đã đặt quá số lượng sản phẩm, vui lòng đặt lại với số lượng khác", "success")
-        }
-        else {
+        if (
+          parseInt(document.getElementById("amount-product").innerHTML) <= 0
+        ) {
+          return swal(
+            "Thông báo",
+            "Sản phẩm này tạm hết hàng, bạn vui lòng đặt lại sau",
+            "success"
+          );
+        } else if (
+          parseInt(document.getElementById("amount-product").innerHTML) <
+          parseInt($("#input-quantity").val())
+        ) {
+          return swal(
+            "Thông báo",
+            "Bạn đã đặt quá số lượng sản phẩm, vui lòng đặt lại với số lượng khác",
+            "success"
+          );
+        } else {
           const res = await axios({
-            url: "http://localhost:8000/add_to_cart",
+            url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/add_to_cart",
             method: "post",
             data: {
               id_product: new URLSearchParams(window.location.search).get(
@@ -1311,7 +1347,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/get_cart",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1332,18 +1368,30 @@
                 (item) => `
                     <li class="item productid-0">
                         <div class="border_list">
-                            <a class="product-image" href="http://127.0.0.1:5500/product.html?productId=${item.id_product}" title="${item.product_name}">
-                                <img src="${item.image1}" data-src="${item.image1}" class="lazy" width="100">
+                            <a class="product-image" href="http://127.0.0.1:5500/product.html?productId=${
+                              item.id_product
+                            }" title="${item.product_name}">
+                                <img src="${item.image1}" data-src="${
+                  item.image1
+                }" class="lazy" width="100">
                             </a>
                             <div class="detail-item">
                                 <div class="product-details">
                                     <p class="product-name">
-                                        <a class="text2line" href="http://127.0.0.1:5500/product.html?productId=${item.id_product}">${item.product_name}</a>
+                                        <a class="text2line" href="http://127.0.0.1:5500/product.html?productId=${
+                                          item.id_product
+                                        }">${item.product_name}</a>
                                     </p>
                                 </div>
                                 <div class="product-details-bottom">
-                                    <span class="price">${numberWithCommas(parseInt(item.price) * (1 - ((parseInt(item.discount) || 0) / 100)))}đ</span>
-                                    <div class="quantity-select qty_drop_cart">x ${item.amount}</div>
+                                    <span class="price">${numberWithCommas(
+                                      parseInt(item.price) *
+                                        (1 -
+                                          (parseInt(item.discount) || 0) / 100)
+                                    )}đ</span>
+                                    <div class="quantity-select qty_drop_cart">x ${
+                                      item.amount
+                                    }</div>
                                 </div>
                             </div>
                         </div>
@@ -1363,9 +1411,11 @@
                     </div>`;
 
           $(".total-price").html(
-            numberWithCommas(_.sumBy(result, function (e) {
-              return parseInt(e.amount) * parseInt(e.price);
-            }))
+            numberWithCommas(
+              _.sumBy(result, function (e) {
+                return parseInt(e.amount) * parseInt(e.price);
+              })
+            )
           );
           $(".count_item").html(
             _.sumBy(result, function (e) {
@@ -1389,15 +1439,15 @@
     async function checkLogin() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/",
+          url: "https://e474-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
           },
         });
         const result = await res.data;
-        if(result?.length <= 0) {
-          return Cookies.remove("uid")
+        if (result?.length <= 0) {
+          return Cookies.remove("uid");
         }
         document.getElementById("name-user-x").innerHTML = result[0]?.username;
         document.getElementById(
