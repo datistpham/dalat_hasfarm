@@ -192,6 +192,36 @@
   </head>
 
   <body class="common-home">
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "102858639403245");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v16.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="hidden-md hidden-lg opacity_menu"></div>
     <div class="opacity_filter"></div>
     <div id="mySidenav" class="sidenav menu_mobile hidden-md hidden-lg">
@@ -511,7 +541,7 @@
                       let fuse;
                       async function getProduct() {
                         const res= await axios({
-                          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
+                          url: "https://1a3c-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/list-product",
                           method: "get",
                         })
                         const result= await res.data
@@ -1123,7 +1153,7 @@
            <script>
             async function getHightLightProduct() {
               const res= await axios({
-                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_hight_light_product",
+                url: "https://1a3c-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/api/get_hight_light_product",
                 method: "get",
           
               })
@@ -2344,7 +2374,7 @@
     async function get_cart() {
         if(Cookies.get("uid")) {
             const res= await axios({
-                url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
+                url: "https://1a3c-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/get_cart",
                 method: "post",
                 data: {
                     id_user: Cookies.get("uid")
@@ -2415,7 +2445,7 @@
     async function checkLogin() {
       if(Cookies.get("uid")) {
         const res= await axios({
-          url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
+          url: "https://1a3c-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/",
           method: "post",
           data: {
             id_user: Cookies.get("uid")
@@ -2446,7 +2476,7 @@
   <script>
     async function getCategory(id) {
       const res= await axios({
-        url: "https://f5cf-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/category/product",
+        url: "https://1a3c-2405-4802-27b-d180-14ab-bf6c-e3d2-c6f2.ap.ngrok.io/category/product",
         method: "get",
         params: {
           category_id: id
@@ -2562,32 +2592,6 @@
     getHoa(1, "list-hoa-bo")
     getHoa(8, "list-binh-hoa")
     getHoa(11, "list-hop-hoa")
-  </script>
-  <!-- get hight light product -->
-  <div id="root" class="suiorjhioeeasas"></div>
-  <!-- Messenger Plugin chat Code -->
-  <div id="fb-root"></div>
-  <!-- Your Plugin chat code -->
-  <div id="fb-customer-chat" class="fb-customerchat"></div>
-  <script>
-    var chatbox = document.getElementById("fb-customer-chat");
-    chatbox.setAttribute("page_id", "100088656941013");
-    chatbox.setAttribute("attribution", "biz_inbox");
-  </script>
-  <!-- Your SDK code -->
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({ xfbml: true, version: "v15.0" });
-    };
-    (function (d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "facebook-jssdk");
   </script>
   
 </html>
